@@ -1,3 +1,3 @@
-(lang dune 3.5)
-(using coq 0.6)
-(name coq-program-verification-template)
+(lang dune 3.21)
+(using rocq 0.11)
+(name rocq-program-verification-template)

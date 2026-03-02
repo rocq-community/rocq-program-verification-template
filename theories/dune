@@ -1,7 +1,8 @@
-(coq.theory
+(rocq.theory
  (name ProgramVerificationTemplate)
- (package coq-program-verification-template)
- (synopsis "Coq program verification project template"))
+ (package rocq-program-verification-template)
+ (theories Stdlib compcert VST Flocq Ltac2)
+ (synopsis "Rocq program verification project template"))
 
 (rule
  (target binary_search.v)

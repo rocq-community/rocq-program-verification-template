@@ -16,15 +16,10 @@ jobs:
       matrix:
         image:
           - 'rocq/rocq-prover:9.0'
-          - 'coqorg/coq:8.20'
       fail-fast: false
     steps:
       - uses: actions/checkout@v6
-      - uses: coq-community/docker-coq-action@v1
+      - uses: rocq-community/docker-coq-action@v1
         with:
-          opam_file: 'coq-program-verification-template.opam'
+          opam_file: 'rocq-program-verification-template.opam'
           custom_image: ${{ matrix.image }}
-
-# See also:
-# https://github.com/coq-community/docker-coq-action#readme
-# https://github.com/erikmd/docker-coq-github-action-demo
