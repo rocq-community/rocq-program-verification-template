@@ -1,4 +1,23 @@
 From VST Require Import floyd.proofauto.
+
+Lemma test : forall (csize cfree : int64),
+  Int64.cmpu Cgt cfree csize = true ->
+  Int64.ltu cfree csize = false.
+Proof.
+  intros csize cfree H.
+  unfold Int64.cmpu in H.
+  unfold Int64.ltu in *.
+  destruct (zlt (Int64.unsigned csize) (Int64.unsigned cfree));
+  destruct (zlt (Int64.unsigned cfree) (Int64.unsigned csize));
+  rep_lia.
+Qed.
+
+Lemma repl_lia_test : forall (contents : list Z), 
+  Int64.min_signed <= Zlength contents - 1.
+Proof.
+rep_lia.
+Qed.
+
 From ProgramVerificationTemplate Require Import binary_search_theory binary_search.
 
 #[export] Instance CompSpecs : compspecs. make_compspecs prog. Defined.

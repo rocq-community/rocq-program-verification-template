@@ -15,14 +15,11 @@ jobs:
     strategy:
       matrix:
         image:
+          - 'rocq/rocq-prover:9.0'
           - 'coqorg/coq:8.20'
-          - 'coqorg/coq:8.19'
-          - 'coqorg/coq:8.18'
-          - 'coqorg/coq:8.17'
-          - 'coqorg/coq:8.16'
       fail-fast: false
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: coq-community/docker-coq-action@v1
         with:
           opam_file: 'coq-program-verification-template.opam'

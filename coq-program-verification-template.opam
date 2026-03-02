@@ -13,12 +13,12 @@ Template project for program verification in Coq.
 Uses the Verified Software Toolchain and a classic binary
 search program in C as an example."""
 
-build: ["dune" "build" "-p" name "-j" jobs]
+build: [make "-j%{jobs}%"]
+install: [make "install"]
 depends: [
-  "dune" {>= "3.5"}
-  "coq" {>= "8.16"}
-  "coq-compcert" {>= "3.13.1"}
-  "coq-vst" {>= "2.13" & < "3~"}
+  "coq" {>= "8.20"}
+  "coq-compcert" {>= "3.16"}
+  "coq-vst" {>= "2.16" & < "3~"}
 ]
 
 tags: [
