@@ -1,0 +1,33 @@
+opam-version: "2.0"
+maintainer: "you@example.com"
+version: "dev"
+
+homepage: "https://github.com/rocq-community/rocq-program-verification-template"
+dev-repo: "git+https://github.com/rocq-community/rocq-program-verification-template.git"
+bug-reports: "https://github.com/rocq-community/rocq-program-verification-template/issues"
+license: "SPDX-identifier-for-your-license"
+
+synopsis: "Rocq program verification project template"
+description: """
+Template project for program verification in the Rocq Prover.
+Uses the Verified Software Toolchain and a classic binary
+search program in C as an example."""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" {>= "9.0"}
+  "coq-compcert" {>= "3.16" & < "3.17"}
+  "coq-vst" {>= "2.16" & < "3~"}
+]
+
+tags: [
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms"
+  "keyword:program verification"
+  "keyword:your keyword"
+  "logpath:ProgramVerificationTemplate"
+]
+authors: [
+  "Your Name"
+  "Another Optional Name"
+]
