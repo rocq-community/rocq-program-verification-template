@@ -39,7 +39,7 @@ cd rocq-program-verification-template
 
 ### Option 1: building the project using `rocq makefile`
 
-With make and the [rocq makefile tool][rocq-makefile-url] bundled with Rocq:
+With `make` and the [rocq makefile tool][rocq-makefile-url] bundled with Rocq:
 ```shell
 make   # or make -j <number-of-cores-on-your-machine> 
 ```
@@ -76,7 +76,7 @@ ccomp -o bsearch src/binary_search.c
 
 - [`rocq-program-verification-template.opam`](rocq-program-verification-template.opam):
   Project [opam package][opam-url] definition, including dependencies.
-- [`_RocqProject`](_RocqProject): File used by Rocq editors to determine the Rocq logical path,
+- [`_CoqProject`](_CoqProject): File used by Rocq editors to determine the Rocq logical path,
   and by the make-based build to obtain the list of files to include. 
 - [`.github/workflows/docker-action.yml`](.github/workflows/docker-action.yml):
   [GitHub Actions][github-actions-ci-url] continuous integration configuration for Rocq,
