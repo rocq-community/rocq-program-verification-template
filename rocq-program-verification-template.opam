@@ -17,7 +17,7 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
   "coq" {>= "9.0"}
-  "coq-compcert" {>= "3.16" & < "3.17"}
+  "coq-compcert" {>= "3.16" & < "3.18"}
   "coq-vst" {>= "2.16" & < "3~"}
 ]
 

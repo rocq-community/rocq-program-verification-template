@@ -14,7 +14,7 @@ search program in C as an example.
 - License: [Unlicense](LICENSE) (change to your license of choice)
 - Compatible Rocq versions: 9.0 or later
 - Additional dependencies:
-  - [CompCert](http://compcert.org) 3.16
+  - [CompCert](http://compcert.org) 3.16 or later
   - [Verified Software Toolchain](https://vst.cs.princeton.edu) 2.16
 - Rocq namespace: `ProgramVerificationTemplate`
 
@@ -27,7 +27,7 @@ the [Rocq Platform](https://github.com/rocq-prover/platform/releases/latest).
 To install dependencies manually via [opam](https://opam.ocaml.org/doc/Install.html):
 ```shell
 opam repo add rocq-released https://rocq-prover.org/opam/released
-opam install coq-compcert.3.16 coq-vst.2.16
+opam install coq-vst.2.16
 ```
 
 ### Obtaining the project
@@ -84,7 +84,7 @@ ccomp -o bsearch src/binary_search.c
 
 ### Make configuration
 
-- [`Makefile`](Makefile): Generic delegating makefile using [rocq_makefile][rocq-makefile-url].
+- [`Makefile`](Makefile): Generic delegating makefile using [rocq makefile][rocq-makefile-url].
 - [`Makefile.rocq.local`](Makefile.rocq.local): Custom optional Make tasks, including compilation
   of the C program.
 
@@ -98,7 +98,7 @@ ccomp -o bsearch src/binary_search.c
 ### rocq makefile vs. Dune
 
 `rocq makefile` and Dune builds are independent. However, for local development,
-it is recommended to use rocq_makefile, since Rocq editors may not be able find
+it is recommended to use `rocq makefile`, since Rocq IDEs may not be able find
 files compiled by Dune. Due to its build hygiene requirements, Dune will
 refuse to build when binary (`.vo`) files are present in `theories`;
 run `make clean` to remove them.
